@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Scan - CyberShield</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>CyberShield</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="productos.html" class="nav-link">Productos</a></li>
+                <li><a href="segurityscan.html" class="nav-link active">Security Scan</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                <li><a href="#" class="nav-link cart-icon"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a></li>
+                <li><a href="#" class="nav-link"><i class="fas fa-user"></i></a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Security Scan Gratuito</h1>
+            <p>Analiza la seguridad de tu sistema en tiempo real</p>
+        </div>
+    </section>
+
+    <!-- Scan Interface -->
+    <section class="scan-interface">
+        <div class="container">
+            <div class="scan-container">
+                <div class="scan-content">
+                    <div class="scan-header">
+                        <h2>Análisis Completo de Seguridad</h2>
+                        <p>Nuestro escáner avanzado verificará tu sistema en busca de vulnerabilidades, malware y problemas de configuración.</p>
+                    </div>
+
+                    <div class="scan-options">
+                        <h3>Selecciona el tipo de análisis:</h3>
+                        <div class="scan-types">
+                            <label class="scan-type">
+                                <input type="radio" name="scanType" value="quick" checked>
+                                <div class="scan-type-card">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <h4>Análisis Rápido</h4>
+                                    <p>Escaneo básico de archivos críticos (2-3 minutos)</p>
+                                </div>
+                            </label>
+                            <label class="scan-type">
+                                <input type="radio" name="scanType" value="full">
+                                <div class="scan-type-card">
+                                    <i class="fas fa-search"></i>
+                                    <h4>Análisis Completo</h4>
+                                    <p>Escaneo profundo de todo el sistema (15-20 minutos)</p>
+                                </div>
+                            </label>
+                            <label class="scan-type">
+                                <input type="radio" name="scanType" value="custom">
+                                <div class="scan-type-card">
+                                    <i class="fas fa-cogs"></i>
+                                    <h4>Análisis Personalizado</h4>
+                                    <p>Selecciona carpetas específicas para escanear</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="scan-controls">
+                        <button id="startScan" class="btn btn-primary">
+                            <i class="fas fa-play"></i>
+                            Iniciar Análisis
+                        </button>
+                        <button id="stopScan" class="btn btn-secondary" style="display: none;">
+                            <i class="fas fa-stop"></i>
+                            Detener Análisis
+                        </button>
+                    </div>
+                </div>
+
+                <div class="scan-terminal">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="btn-red"></span>
+                            <span class="btn-yellow"></span>
+                            <span class="btn-green"></span>
+                        </div>
+                        <span class="terminal-title">CyberShield Security Scanner v2.1</span>
+                    </div>
+                    <div class="terminal-body" id="scanOutput">
+                        <div class="scan-ready">
+                            <p class="scan-status">🛡️ Sistema de análisis listo</p>
+                            <p class="scan-info">Haz clic en "Iniciar Análisis" para comenzar el escaneo de seguridad</p>
+                            <div class="system-info">
+                                <p><span class="label">Sistema:</span> <span class="value" id="systemOS">Detectando...</span></p>
+                                <p><span class="label">Última actualización:</span> <span class="value">Hace 2 horas</span></p>
+                                <p><span class="label">Base de datos de amenazas:</span> <span class="value">Actualizada</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="scan-results" id="scanResults" style="display: none;">
+        <div class="container">
+            <h2>Resultados del Análisis</h2>
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-icon success">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Sistema Protegido</h3>
+                    <div class="result-number" id="protectedFiles">0</div>
+                    <p>Archivos analizados y seguros</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-icon warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Vulnerabilidades</h3>
+                    <div class="result-number" id="vulnerabilities">0</div>
+                    <p>Problemas de seguridad detectados</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-icon danger">
+                        <i class="fas fa-virus"></i>
+                    </div>
+                    <h3>Amenazas</h3>
+                    <div class="result-number" id="threats">0</div>
+                    <p>Malware y virus encontrados</p>
+                </div>
+            </div>
+
+            <div class="results-details">
+                <div class="detail-section">
+                    <h3><i class="fas fa-info-circle"></i> Resumen del Análisis</h3>
+                    <div id="scanSummary">
+                        <!-- Se llenará dinámicamente -->
+                    </div>
+                </div>
+                
+                <div class="recommendations">
+                    <h3><i class="fas fa-lightbulb"></i> Recomendaciones</h3>
+                    <ul id="recommendationsList">
+                        <!-- Se llenará dinámicamente -->
+                    </ul>
+                </div>
+            </div>
+
+            <div class="results-actions">
+                <button class="btn btn-primary">
+                    <i class="fas fa-download"></i>
+                    Descargar Reporte
+                </button>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-redo"></i>
+                    Nuevo Análisis
+                </button>
+                <a href="productos.html" class="btn btn-outline">
+                    <i class="fas fa-shield-alt"></i>
+                    Ver Productos de Protección
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="scan-features">
+        <div class="container">
+            <h2 class="section-title">¿Qué Incluye Nuestro Security Scan?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-virus"></i>
+                    </div>
+                    <h3>Detección de Malware</h3>
+                    <p>Identifica virus, trojanos, ransomware y otras amenazas maliciosas en tu sistema.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <h3>Análisis de Vulnerabilidades</h3>
+                    <p>Encuentra debilidades en tu sistema operativo y aplicaciones instaladas.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Monitoreo de Red</h3>
+                    <p>Analiza el tráfico de red en busca de actividades sospechosas.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3>Seguridad de Contraseñas</h3>
+                    <p>Evalúa la fortaleza de tus contraseñas y detecta credenciales comprometidas.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>Análisis WiFi</h3>
+                    <p>Verifica la seguridad de tu conexión inalámbrica y redes cercanas.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3>Configuración del Sistema</h3>
+                    <p>Revisa configuraciones críticas de seguridad en tu sistema operativo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Es realmente gratuito el Security Scan?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, nuestro Security Scan básico es completamente gratuito. No requiere registro ni información de pago para realizar el análisis inicial de tu sistema.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Qué datos recopila el escáner?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>El escáner solo analiza metadatos de archivos y configuraciones del sistema. No accede a contenido personal ni envía archivos privados a nuestros servidores.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Cuánto tiempo toma el análisis completo?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>El análisis rápido toma 2-3 minutos, mientras que el análisis completo puede tomar entre 15-20 minutos dependiendo del tamaño de tu disco duro.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Puede el escáner eliminar amenazas?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>La versión gratuita detecta y reporta amenazas. Para eliminación automática y protección en tiempo real, recomendamos nuestros productos premium.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>CyberShield</span>
+                    </div>
+                    <p>Protegiendo el mundo digital desde 2018</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="nosotros.html">Acerca de Nosotros</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                        <li><a href="#">Términos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CyberShield. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>

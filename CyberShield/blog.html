@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - CyberShield</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>CyberShield</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="productos.html" class="nav-link">Productos</a></li>
+                <li><a href="segurityscan.html" class="nav-link">Security Scan</a></li>
+                <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                <li><a href="#" class="nav-link cart-icon"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a></li>
+                <li><a href="#" class="nav-link"><i class="fas fa-user"></i></a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Blog de Ciberseguridad</h1>
+            <p>Mantente informado sobre las últimas amenazas y tendencias en seguridad digital</p>
+        </div>
+    </section>
+
+    <!-- Blog Categories -->
+    <section class="blog-categories">
+        <div class="container">
+            <div class="category-buttons">
+                <button class="category-btn active" data-category="all">Todos</button>
+                <button class="category-btn" data-category="threats">Amenazas</button>
+                <button class="category-btn" data-category="tips">Consejos</button>
+                <button class="category-btn" data-category="news">Noticias</button>
+                <button class="category-btn" data-category="tutorials">Tutoriales</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="blog-grid">
+                
+                <!-- Featured Post -->
+                <article class="blog-post featured" data-category="threats">
+                    <div class="post-image">
+                        <img src="https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Ransomware 2024">
+                        <div class="post-badge">Destacado</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Amenazas</span>
+                            <span class="post-date">15 Enero 2024</span>
+                        </div>
+                        <h2>Las 10 Amenazas de Ransomware Más Peligrosas en 2024</h2>
+                        <p>Descubre las variantes de ransomware más activas este año y cómo proteger tu organización contra estos ataques devastadores.</p>
+                        <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-post" data-category="tips">
+                    <div class="post-image">
+                        <img src="https://images.pexels.com/photos/1591061/pexels-photo-1591061.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Contraseñas seguras">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Consejos</span>
+                            <span class="post-date">12 Enero 2024</span>
+                        </div>
+                        <h3>Cómo Crear Contraseñas Realmente Seguras</h3>
+                        <p>Guía completa para generar y gestionar contraseñas que mantengan tus cuentas a salvo de los ciberdelincuentes.</p>
+                        <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-post" data-category="news">
+                    <div class="post-image">
+                        <img src="https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=600" alt="IA Ciberseguridad">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Noticias</span>
+                            <span class="post-date">10 Enero 2024</span>
+                        </div>
+                        <h3>IA en Ciberseguridad: El Futuro de la Protección Digital</h3>
+                        <p>Explora cómo la inteligencia artificial está revolucionando la detección y prevención de amenazas cibernéticas.</p>
+                        <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-post" data-category="tutorials">
+                    <div class="post-image">
+                        <img src="https://images.pexels.com/photos/5380792/pexels-photo-5380792.jpeg?auto=compress&cs=tinysrgb&w=600" alt="VPN Setup">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Tutoriales</span>
+                            <span class="post-date">8 Enero 2024</span>
+                        </div>
+                        <h3>Configuración Paso a Paso de tu Primera VPN</h3>
+                        <p>Tutorial detallado para configurar una VPN en todos tus dispositivos y navegar de forma segura y privada.</p>
+                        <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-post" data-category="threats">
+                    <div class="post-image">
+                        <img src="https://images.pexels.com/photos/6963944/pexels-photo-6963944.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Phishing">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Amenazas</span>
+                            <span class="post-date">5 Enero 2024</span>
+                        </div>
+                        <h3>Nuevas Técnicas de Phishing que Debes Conocer</h3>
+                        <p>Los ciberdelincuentes han evolucionado sus métodos. Te mostramos las técnicas más recientes y cómo identificarlas.</p>
+                        <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-post" data-category="tips">
+                    <div class="post-image">
+                        <img src="https://images.pexels.com/photos/5474006/pexels-photo-5474006.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Trabajo remoto">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Consejos</span>
+                            <span class="post-date">3 Enero 2024</span>
+                        </div>
+                        <h3>Seguridad en el Trabajo Remoto: Mejores Prácticas</h3>
+                        <p>Consejos esenciales para mantener la seguridad mientras trabajas desde casa o cualquier ubicación remota.</p>
+                        <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-post" data-category="news">
+                    <div class="post-image">
+                        <img src="https://images.pexels.com/photos/6963944/pexels-photo-6963944.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Regulaciones">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Noticias</span>
+                            <span class="post-date">1 Enero 2024</span>
+                        </div>
+                        <h3>Nuevas Regulaciones de Privacidad Digital en 2024</h3>
+                        <p>Conoce las nuevas leyes y regulaciones que afectarán la privacidad digital y cómo adaptarte a estos cambios.</p>
+                        <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-post" data-category="tutorials">
+                    <div class="post-image">
+                        <img src="https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Firewall">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Tutoriales</span>
+                            <span class="post-date">28 Diciembre 2023</span>
+                        </div>
+                        <h3>Configuración Avanzada de Firewall para Pequeñas Empresas</h3>
+                        <p>Aprende a configurar un firewall empresarial para proteger tu negocio de amenazas externas e internas.</p>
+                        <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-post" data-category="threats">
+                    <div class="post-image">
+                        <img src="https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Malware">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-category">Amenazas</span>
+                            <span class="post-date">25 Diciembre 2023</span>
+                        </div>
+                        <h3>Malware Fileless: La Amenaza Invisible</h3>
+                        <p>Descubre cómo funciona el malware que no deja rastros en el disco duro y las mejores formas de detectarlo.</p>
+                        <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="#" class="page-btn active">1</a>
+                <a href="#" class="page-btn">2</a>
+                <a href="#" class="page-btn">3</a>
+                <a href="#" class="page-btn">Siguiente <i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Mantente Informado</h2>
+                <p>Recibe las últimas noticias de ciberseguridad directamente en tu correo</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu email aquí..." required>
+                    <button type="submit">Suscribirse</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>CyberShield</span>
+                    </div>
+                    <p>Protegiendo el mundo digital desde 2018</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="nosotros.html">Acerca de Nosotros</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                        <li><a href="#">Términos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CyberShield. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>
